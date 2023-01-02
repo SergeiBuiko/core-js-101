@@ -245,8 +245,8 @@ function toArrayOfSquares(arr) {
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
 
-function getMovingSum(arr) {
-  return arr;
+function getMovingSum(/* arr */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -473,9 +473,17 @@ function sortCitiesArray(arr) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  const arr = Array(n).fill().map(() => Array(n).fill(0));
+  const arr2 = arr.map((elem, index) => elem.map((el, i) => {
+    if (i === index) {
+      return 1;
+    }
+    return el;
+  }));
+  return arr2;
 }
+
 
 /**
  * Creates an array of integers from the specified start to end (inclusive)
